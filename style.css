@@ -391,9 +391,9 @@ footer {
 .bg-photo-container {
     position: absolute; /* Retira do fluxo normal */
     top: 0;
-    right: 0;
-    width: 40vw; /* Ocupa 40% da largura da tela */
-    max-width: 500px; /* Mas não passa de 500px */
+    right: 20;
+    width: 20vw; /* Ocupa 40% da largura da tela */
+    max-width: 400px; /* Mas não passa de 500px */
     height: 600px; /* Altura fixa para garantir a área */
     overflow: hidden; /* Corta o que passar do container */
     z-index: -1; /* Garante que fique ATRÁS do botão 'Sobre Mim' */
