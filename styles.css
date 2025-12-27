@@ -1,0 +1,342 @@
+/* style.css */
+
+:root {
+    /* Paleta de Cores */
+    --bg-page: #f5f5f7;      /* Off-white Apple */
+    --bg-card: #ffffff;      /* Branco puro para destaque */
+    --bg-secondary: #E5E5E5; /* Cinza claro para detalhes */
+    --text-main: #14213D;    /* Azul Oxford Escuro (Cor principal do texto) */
+    --text-black: #000000;   /* Preto absoluto */
+    --accent: #FCA311;       /* Laranja vibrante (Detalhes) */
+    --radius: 28px;          /* Arredondamento Apple */
+    --transition: all 0.3s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.6;
+    padding-bottom: 60px;
+    position: relative; /* Para o posicionamento do botão About */
+}
+
+a { text-decoration: none; color: inherit; }
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- BOTÃO ABOUT (POP-UP TRIGGER) --- */
+.nav-top {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 0;
+}
+
+.btn-about {
+    background: var(--bg-card);
+    border: 1px solid var(--bg-secondary);
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--text-main);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.btn-about:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    color: var(--accent);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    text-align: center;
+    padding: 60px 20px 80px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--text-black);
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    color: var(--text-main);
+    opacity: 0.8;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-links a {
+    font-size: 1.8rem;
+    color: var(--text-main);
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--accent);
+    transform: scale(1.1);
+}
+
+/* --- TITULOS DAS SEÇÕES --- */
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    margin-top: 80px;
+    color: var(--text-black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.link-ver-mais {
+    font-size: 1rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.link-ver-mais:hover { text-decoration: underline; }
+
+/* --- BENTO GRID (GERAL) --- */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Colunas padrão */
+    gap: 20px;
+    grid-auto-rows: minmax(200px, auto);
+}
+
+.card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 30px;
+    transition: var(--transition);
+    border: 1px solid transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    border-color: rgba(0,0,0,0.05);
+}
+
+/* Tipografia dentro dos Cards */
+.card-category {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.card-desc {
+    font-size: 0.95rem;
+    color: var(--text-main);
+    opacity: 0.7;
+}
+
+/* Variações do Bento Grid */
+.span-2 { grid-column: span 2; }
+.row-2 { grid-row: span 2; }
+
+/* Estilização específica para Projetos (Imagem placeholder) */
+.project-visual {
+    width: 100%;
+    height: 140px;
+    background: var(--bg-secondary);
+    border-radius: 18px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #999;
+}
+
+/* --- TECH STACK (HOVER EFFECT) --- */
+.stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.stack-card {
+    background: var(--bg-card);
+    border-radius: 20px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    transition: var(--transition);
+}
+
+.stack-icon {
+    font-size: 2.5rem;
+    color: var(--text-main);
+    transition: var(--transition);
+}
+
+.stack-hover-text {
+    position: absolute;
+    opacity: 0;
+    font-weight: 700;
+    color: var(--accent);
+    text-align: center;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    transform: translateY(10px);
+}
+
+.stack-card:hover .stack-icon {
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+.stack-card:hover .stack-hover-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- TIMELINE (JORNADA) --- */
+.timeline {
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px solid var(--bg-secondary);
+    margin-left: 10px;
+}
+
+.timeline-item {
+    margin-bottom: 40px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -26px; /* Ajuste para centralizar na linha */
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+    border: 4px solid var(--bg-page);
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.timeline-role {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 5px 0;
+}
+
+.timeline-company {
+    font-size: 0.95rem;
+    opacity: 0.7;
+}
+
+/* --- CERTIFICAÇÕES --- */
+.cert-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.cert-icon {
+    font-size: 2.5rem;
+    color: #E74C3C; /* Cor Databricks aproximada */
+}
+
+/* --- MODAL (POP-UP) --- */
+.modal-overlay {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: var(--radius);
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    animation: modalPop 0.3s ease-out;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px; right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-main);
+}
+
+@keyframes modalPop {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    margin-top: 80px;
+    padding: 40px 0;
+    border-top: 1px solid var(--bg-secondary);
+    color: var(--text-main);
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 768px) {
+    .bento-grid { grid-template-columns: 1fr; }
+    .span-2, .row-2 { grid-column: span 1; grid-row: span 1; }
+    .hero h1 { font-size: 2.5rem; }
+}
