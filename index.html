@@ -3,208 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio | ML Engineer</title>
+    <title>Portfólio | Machine Learning Engineer</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            /* Cores estilo Apple */
-            --bg-color: #f5f5f7; /* Cinza muito claro */
-            --card-bg: #ffffff;
-            --text-main: #1d1d1f;
-            --text-secondary: #86868b;
-            --accent: #0071e3; /* Azul Apple */
-            --radius: 28px; /* Arredondamento acentuado */
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.5;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            text-align: center;
-            padding: 80px 20px 60px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            font-weight: 400;
-            margin-bottom: 30px;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .social-links a {
-            color: var(--text-main);
-            font-size: 1.8rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--accent);
-        }
-
-        /* --- BENTO GRID (Projetos) --- */
-        .section-title {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 30px;
-            margin-top: 40px;
-        }
-
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: auto auto;
-            gap: 20px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            padding: 30px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .card:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-        }
-
-        /* Destaque (Ocupa 2 colunas) */
-        .card.featured {
-            grid-column: span 2;
-            background: #1d1d1f; /* Fundo escuro para destaque */
-            color: white;
-        }
-        
-        .card.featured .card-desc { color: #a1a1a6; }
-
-        /* Vertical (Ocupa 2 linhas) */
-        .card.tall {
-            grid-row: span 2;
-        }
-
-        .card-category {
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-secondary);
-            margin-bottom: 10px;
-        }
-        
-        .card.featured .card-category { color: #86868b; }
-
-        .card-title {
-            font-size: 1.6rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .card-desc {
-            font-size: 1rem;
-            color: var(--text-secondary);
-        }
-
-        /* Placeholder para imagem dentro do card (opcional) */
-        .card-image {
-            height: 150px;
-            background: #e5e5e5;
-            border-radius: 16px;
-            margin-top: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: #ccc;
-        }
-
-        /* --- RESPONSIVIDADE --- */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .bento-grid {
-                grid-template-columns: 1fr; /* Vira coluna única no mobile */
-            }
-            .card.featured, .card.tall {
-                grid-column: span 1;
-                grid-row: span 1;
-            }
-        }
-    </style>
 </head>
 <body>
 
     <div class="container">
-        
+        <nav class="nav-top">
+            <button class="btn-about" onclick="toggleModal()">Sobre Mim</button>
+        </nav>
+
         <header class="hero">
-            <h1>Olá, sou o [Seu Nome].</h1>
-            <p>Machine Learning Engineer focado em Python e Backend.</p>
+            <h1>Olá, eu sou o [Seu Nome]</h1>
+            <p>Machine Learning Engineer • Data Scientist • Python Dev</p>
             
             <div class="social-links">
-                <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:seuemail@email.com" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-medium"></i></a>
+                <a href="mailto:seuemail@exemplo.com"><i class="fas fa-envelope"></i></a>
             </div>
         </header>
 
-        <h2 class="section-title">Projetos Selecionados</h2>
+        <div class="section-title">
+            Projetos Selecionados
+            <a href="https://github.com/seunome?tab=repositories" target="_blank" class="link-ver-mais">Ver repositórios <i class="fas fa-arrow-right"></i></a>
+        </div>
         
         <div class="bento-grid">
-            
-            <a href="#" class="card featured">
+            <a href="#" class="card span-2">
                 <div>
                     <div class="card-category">Machine Learning</div>
-                    <div class="card-title">Previsão de Churn com XGBoost</div>
-                    <div class="card-desc">Pipeline completo de ML desde a limpeza de dados até o deploy na AWS.</div>
+                    <div class="card-title">Customer Churn Prediction</div>
+                    <div class="card-desc">Modelo XGBoost integrado com API Flask e Docker para previsão em tempo real.</div>
                 </div>
-                <div class="card-image" style="background: #333;"><i class="fas fa-chart-line"></i></div>
+                <div class="project-visual"><i class="fas fa-chart-pie"></i></div>
             </a>
 
-            <a href="#" class="card tall">
+            <a href="#" class="card row-2">
                 <div>
-                    <div class="card-category">Backend API</div>
-                    <div class="card-title">API FastApi & Docker</div>
-                    <div class="card-desc">Microsserviço de alta performance para inferência de modelos em tempo real.</div>
+                    <div class="card-category">Deep Learning</div>
+                    <div class="card-title">Visão Computacional</div>
+                    <div class="card-desc">Detecção de objetos em imagens médicas usando PyTorch e CNNs.</div>
                 </div>
-                <div class="card-image"><i class="fas fa-server"></i></div>
+                <div class="project-visual" style="height: 100%;"><i class="fas fa-eye"></i></div>
             </a>
 
             <a href="#" class="card">
                 <div>
-                    <div class="card-category">NLP</div>
-                    <div class="card-title">Análise de Sentimento</div>
+                    <div class="card-category">Engenharia de Dados</div>
+                    <div class="card-title">ETL Pipeline AWS</div>
                 </div>
             </a>
 
@@ -214,30 +63,132 @@
                     <div class="card-title">Bot de Web Scraping</div>
                 </div>
             </a>
-
         </div>
 
-        <h2 class="section-title">Tech Stack</h2>
-        <div class="bento-grid" style="grid-template-columns: repeat(4, 1fr); gap: 15px;">
-            <div class="card" style="align-items: center; text-align: center; padding: 20px;">
-                <i class="fab fa-python" style="font-size: 2rem; margin-bottom: 10px;"></i>
-                <div class="card-title" style="font-size: 1rem;">Python</div>
+        <div class="section-title">Tech Stack</div>
+        <div class="stack-grid">
+            <a href="pagina-projetos-python.html" class="stack-card">
+                <i class="fab fa-python stack-icon"></i>
+                <span class="stack-hover-text">Ver projetos</span>
+            </a>
+            <a href="#" class="stack-card">
+                <i class="fas fa-database stack-icon"></i> <span class="stack-hover-text">Ver projetos</span>
+            </a>
+            <a href="#" class="stack-card">
+                <i class="fas fa-brain stack-icon"></i> <span class="stack-hover-text">Ver projetos</span>
+            </a>
+            <a href="#" class="stack-card">
+                <i class="fab fa-docker stack-icon"></i>
+                <span class="stack-hover-text">Ver projetos</span>
+            </a>
+            <a href="#" class="stack-card">
+                <i class="fab fa-aws stack-icon"></i>
+                <span class="stack-hover-text">Ver projetos</span>
+            </a>
+        </div>
+
+        <div class="section-title">Certificações</div>
+        <div class="bento-grid" style="grid-template-columns: 1fr 1fr;">
+            <div class="card cert-card">
+                <i class="fas fa-certificate cert-icon"></i>
+                <div>
+                    <div class="card-category">Databricks</div>
+                    <div class="card-title" style="font-size: 1.2rem;">Associate Machine Learning Engineer</div>
+                    <div class="card-desc">Validação de conhecimentos em MLflow e pipelines de dados no Spark.</div>
+                </div>
             </div>
-            <div class="card" style="align-items: center; text-align: center; padding: 20px;">
-                <i class="fas fa-database" style="font-size: 2rem; margin-bottom: 10px;"></i>
-                <div class="card-title" style="font-size: 1rem;">SQL</div>
-            </div>
-            <div class="card" style="align-items: center; text-align: center; padding: 20px;">
-                <i class="fas fa-brain" style="font-size: 2rem; margin-bottom: 10px;"></i>
-                <div class="card-title" style="font-size: 1rem;">PyTorch</div>
-            </div>
-            <div class="card" style="align-items: center; text-align: center; padding: 20px;">
-                <i class="fab fa-docker" style="font-size: 2rem; margin-bottom: 10px;"></i>
-                <div class="card-title" style="font-size: 1rem;">Docker</div>
+            <div class="card cert-card">
+                <i class="fas fa-graduation-cap cert-icon" style="color: var(--text-main);"></i>
+                <div>
+                    <div class="card-category">Pós-Graduação</div>
+                    <div class="card-title" style="font-size: 1.2rem;">Data Science & Analytics</div>
+                    <div class="card-desc">USP ESALQ</div>
+                </div>
             </div>
         </div>
 
+        <div class="section-title">Artigos Recentes</div>
+        <div class="bento-grid">
+            <a href="#" class="card">
+                <div class="card-category">Artigo Medium</div>
+                <div class="card-title" style="font-size: 1.1rem;">Como otimizar hiperparâmetros com Optuna</div>
+                <div class="card-desc" style="margin-top: 10px;">Leitura de 5 min</div>
+            </a>
+            <a href="#" class="card">
+                <div class="card-category">Tutorial</div>
+                <div class="card-title" style="font-size: 1.1rem;">Deploy de modelos com FastAPI</div>
+                <div class="card-desc" style="margin-top: 10px;">Leitura de 8 min</div>
+            </a>
+            <a href="#" class="card">
+                <div class="card-category">Estudo de Caso</div>
+                <div class="card-title" style="font-size: 1.1rem;">Reduzindo dimensionalidade com PCA</div>
+                <div class="card-desc" style="margin-top: 10px;">Leitura de 6 min</div>
+            </a>
+        </div>
+
+        <div class="section-title">Minha Jornada</div>
+        <div class="card">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 - Presente</div>
+                    <div class="timeline-role">Machine Learning Engineer</div>
+                    <div class="timeline-company">Freelancer / Projetos Pessoais</div>
+                    <p class="card-desc">Desenvolvimento de soluções end-to-end e consultoria.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 - 2024</div>
+                    <div class="timeline-role">Pós-graduação em Data Science</div>
+                    <div class="timeline-company">USP ESALQ</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2015 - 2023</div>
+                    <div class="timeline-role">Carreira Bancária & Contabilidade</div>
+                    <div class="timeline-company">Banco do Brasil</div>
+                    <p class="card-desc">Análise financeira e transição para dados.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 [Seu Nome]. Construído com Python e Café.</p>
+        </footer>
+
+    </div> <div class="modal-overlay" id="aboutModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="toggleModal()">&times;</span>
+            <h2 style="margin-bottom: 15px;">Sobre Mim</h2>
+            <p style="margin-bottom: 15px; color: #555;">
+                Sou um contador e bancário em transição de carreira apaixonado por tecnologia. 
+                Com uma base sólida em análise financeira e graduação em Ciências Contábeis, 
+                encontrei no Machine Learning a ferramenta perfeita para resolver problemas complexos.
+            </p>
+            <p style="margin-bottom: 15px; color: #555;">
+                Minhas especialidades incluem Python, SQL, construção de pipelines de dados e modelagem preditiva.
+            </p>
+            <p style="color: var(--accent); font-weight: 600;">
+                Atualmente focado em Engenharia de Machine Learning e MLOps.
+            </p>
+        </div>
     </div>
+
+    <script>
+        function toggleModal() {
+            const modal = document.getElementById('aboutModal');
+            if (modal.style.display === 'flex') {
+                modal.style.display = 'none';
+            } else {
+                modal.style.display = 'flex';
+            }
+        }
+
+        // Fechar ao clicar fora do modal
+        window.onclick = function(event) {
+            const modal = document.getElementById('aboutModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 
 </body>
 </html>
