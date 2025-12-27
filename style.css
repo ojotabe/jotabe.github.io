@@ -357,3 +357,30 @@ footer {
     .span-2, .row-2 { grid-column: span 1; grid-row: span 1; }
     .hero h1 { font-size: 2.5rem; }
 }
+
+/* --- VARIAÇÃO DE CARD: FUNDO ESCURO --- */
+.card.card-dark {
+    background-color: var(--text-black); /* Usa o preto da sua paleta */
+    color: #FCA311;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borda sutil para separar do fundo */
+}
+
+/* Força cores claras nos textos internos */
+.card.card-dark .card-title {
+    color: #ffffff;
+}
+
+.card.card-dark .card-desc {
+    color: rgba(255, 255, 255, 0.7); /* Branco com transparência para hierarquia */
+}
+
+/* Ajusta o fundo da "imagem" placeholder para ficar sutil */
+.card.card-dark .project-visual {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Se quiser o ícone de categoria (ex: Machine Learning) em outra cor */
+.card.card-dark .card-category {
+    color: var(--accent); /* Mantém o laranja, que contrasta bem com preto */
+}
