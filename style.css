@@ -185,7 +185,7 @@ a { text-decoration: none; color: inherit; }
     color: #999;
 }
 
-/* --- TECH STACK (HOVER EFFECT) --- */
+/* --- TECH STACK (HOVER FIX) --- */
 .stack-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -195,7 +195,7 @@ a { text-decoration: none; color: inherit; }
 .stack-card {
     background: var(--bg-card);
     border-radius: 20px;
-    height: 120px;
+    height: 140px; /* Aumentei um pouco para caber o texto */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -203,14 +203,30 @@ a { text-decoration: none; color: inherit; }
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0,0,0,0.02);
     transition: var(--transition);
+    text-align: center;
+}
+
+/* Agrupa ícone e texto para animarem juntos */
+.stack-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Espaço entre ícone e texto */
+    transition: var(--transition);
 }
 
 .stack-icon {
     font-size: 2.5rem;
     color: var(--text-main);
-    transition: var(--transition);
 }
 
+.stack-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+/* O texto escondido "Ver projetos" */
 .stack-hover-text {
     position: absolute;
     opacity: 0;
@@ -222,7 +238,8 @@ a { text-decoration: none; color: inherit; }
     transform: translateY(10px);
 }
 
-.stack-card:hover .stack-icon {
+/* EFEITO HOVER: Some o conteúdo (ícone+texto) e aparece o "Ver projetos" */
+.stack-card:hover .stack-content {
     opacity: 0;
     transform: scale(0.5);
 }
