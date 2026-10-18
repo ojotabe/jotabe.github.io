@@ -12,6 +12,10 @@
     --transition: all 0.3s ease;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -21,6 +25,7 @@ body {
     line-height: 1.6;
     padding-bottom: 60px;
     position: relative; /* Para o posicionamento do botão About */
+    overflow-x: hidden;
 }
 
 a { text-decoration: none; color: inherit; }
@@ -31,17 +36,78 @@ a { text-decoration: none; color: inherit; }
     padding: 0 20px;
 }
 
-/* --- BOTÃO ABOUT (POP-UP TRIGGER) --- */
+/* --- CABEÇALHO / NAVEGAÇÃO --- */
 .nav-top {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.nav-left, .nav-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.nav-right {
     justify-content: flex-end;
-    padding: 20px 0;
+}
+
+.nav-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.nav-link {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+    padding: 6px 14px;
+    border-radius: 50px;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: var(--accent);
+    background: rgba(0, 0, 0, 0.04);
+}
+
+/* Marca Neon THEJOTA */
+.logo-neon {
+    font-size: 0.92rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #00f0ff;
+    background: #0b0f19;
+    padding: 7px 18px;
+    border-radius: 50px;
+    border: 1px solid rgba(0, 240, 255, 0.45);
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.3), inset 0 0 8px rgba(0, 240, 255, 0.12);
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.9);
+    display: inline-flex;
+    align-items: center;
+    cursor: default;
+    transition: var(--transition);
+}
+
+.logo-neon:hover {
+    border-color: #00f0ff;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.6), inset 0 0 12px rgba(0, 240, 255, 0.25);
+    text-shadow: 0 0 12px rgba(0, 240, 255, 1);
+    transform: translateY(-2px);
 }
 
 .btn-about {
     background: var(--bg-card);
     border: 1px solid var(--bg-secondary);
-    padding: 10px 24px;
+    padding: 8px 20px;
     border-radius: 50px;
     font-weight: 600;
     font-size: 0.9rem;
@@ -59,41 +125,160 @@ a { text-decoration: none; color: inherit; }
 
 /* --- HERO SECTION --- */
 .hero {
-    text-align: center;
-    padding: 60px 20px 80px;
+    text-align: left;
+    padding: 30px 0 60px;
 }
 
-.hero h1 {
-    font-size: 3.5rem;
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.25fr 0.85fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-title {
+    font-size: 2.25rem;
     font-weight: 800;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.025em;
     color: var(--text-black);
-    margin-bottom: 15px;
+    margin-bottom: 8px;
+    line-height: 1.2;
 }
 
-.hero p {
-    font-size: 1.4rem;
+.hero-role {
+    font-size: 1.15rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero-about {
+    font-size: 0.96rem;
     color: var(--text-main);
-    opacity: 0.8;
-    margin-bottom: 30px;
-    font-weight: 400;
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+.hero-about p {
+    margin-bottom: 12px;
+    opacity: 0.85;
+}
+
+.hero-highlight {
+    background: rgba(252, 163, 17, 0.08);
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    border-radius: 0 12px 12px 0;
+    font-size: 0.92rem;
+    color: var(--text-main);
+    opacity: 1 !important;
+}
+
+.hero-highlight i {
+    color: var(--accent);
+    margin-right: 6px;
+}
+
+.hero-footer-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.btn-hero {
+    background: var(--text-black);
+    color: #ffffff;
+    padding: 11px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+}
+
+.btn-hero:hover {
+    background: var(--accent);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(252, 163, 17, 0.25);
+}
+
+.btn-hero i {
+    font-size: 0.8rem;
+    transition: transform 0.2s ease;
+}
+
+.btn-hero:hover i {
+    transform: translateY(2px);
 }
 
 .social-links {
     display: flex;
-    justify-content: center;
-    gap: 25px;
+    justify-content: flex-start;
+    gap: 18px;
 }
 
 .social-links a {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: var(--text-main);
     transition: var(--transition);
 }
 
 .social-links a:hover {
     color: var(--accent);
-    transform: scale(1.1);
+    transform: scale(1.15);
+}
+
+/* Foto no lado direito do Hero */
+.hero-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image-card {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-photo {
+    width: 100%;
+    height: auto;
+    max-height: 480px;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    /* Gradiente de transparência do topo esquerdo para o bottom */
+    -webkit-mask-image: linear-gradient(150deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0.7) 65%, rgba(0, 0, 0, 0) 96%);
+    mask-image: linear-gradient(150deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0.7) 65%, rgba(0, 0, 0, 0) 96%);
+    transition: var(--transition);
+}
+
+.hero-photo-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent 65%, var(--bg-page) 100%);
 }
 
 /* --- TITULOS DAS SEÇÕES --- */
@@ -171,10 +356,10 @@ a { text-decoration: none; color: inherit; }
 .span-2 { grid-column: span 2; }
 .row-2 { grid-row: span 2; }
 
-/* Estilização específica para Projetos (Imagem placeholder) */
+/* Estilização específica para Projetos (Mockups e Imagens) */
 .project-visual {
     width: 100%;
-    height: 140px;
+    height: 150px;
     background: var(--bg-secondary);
     border-radius: 18px;
     margin-top: 20px;
@@ -183,6 +368,26 @@ a { text-decoration: none; color: inherit; }
     justify-content: center;
     font-size: 2rem;
     color: #999;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.card:hover .project-visual img {
+    transform: scale(1.05);
+}
+
+.card.row-2 .project-visual {
+    height: 100%;
+    min-height: 220px;
 }
 
 /* --- TECH STACK (HOVER FIX) --- */
@@ -351,11 +556,52 @@ footer {
     opacity: 0.6;
 }
 
+/* --- SCROLL MARGINS PARA ÂNCORAS --- */
+.section-title {
+    scroll-margin-top: 35px;
+}
+
+#sobre {
+    scroll-margin-top: 20px;
+}
+
 /* --- RESPONSIVO --- */
+@media (max-width: 860px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    .hero-image-card {
+        max-width: 320px;
+        margin: 0 auto;
+    }
+    .hero-title {
+        font-size: 1.95rem;
+    }
+}
+
 @media (max-width: 768px) {
     .bento-grid { grid-template-columns: 1fr; }
     .span-2, .row-2 { grid-column: span 1; grid-row: span 1; }
-    .hero h1 { font-size: 2.5rem; }
+}
+
+@media (max-width: 600px) {
+    .nav-top {
+        gap: 6px;
+        padding: 16px 0;
+    }
+    .nav-center {
+        gap: 6px;
+    }
+    .nav-link {
+        padding: 4px 8px;
+        font-size: 0.82rem;
+    }
+    .logo-neon {
+        font-size: 0.78rem;
+        padding: 5px 12px;
+        letter-spacing: 0.1em;
+    }
 }
 
 /* --- VARIAÇÃO DE CARD: FUNDO ESCURO --- */
@@ -386,62 +632,150 @@ footer {
 }
 
 
-/* --- FOTO DE FUNDO NO CANTO SUPERIOR DIREITO --- */
-
-.bg-photo-container {
-    position: absolute; /* Retira do fluxo normal */
-    top: 0;
-    right: 20;
-    width: 20vw; /* Ocupa 40% da largura da tela */
-    max-width: 400px; /* Mas não passa de 500px */
-    height: 600px; /* Altura fixa para garantir a área */
-    overflow: hidden; /* Corta o que passar do container */
-    z-index: -1; /* Garante que fique ATRÁS do botão 'Sobre Mim' */
-    border-bottom-left-radius: 100px; /* Arredondamento estilo Apple */
-    opacity: 0.8; /* Leve transparência para misturar com o fundo */
+/* --- BOTÃO VER MAIS (PROJETOS) --- */
+.projects-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
 }
 
-.bg-photo {
+.btn-ver-mais {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--bg-card);
+    color: var(--text-main);
+    border: 1.5px solid var(--text-main);
+    padding: 14px 34px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-ver-mais i {
+    transition: transform 0.3s ease, color 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.btn-ver-mais:hover {
+    background: var(--text-black);
+    color: #ffffff;
+    border-color: var(--text-black);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn-ver-mais:hover i {
+    transform: translateX(5px);
+    color: var(--accent);
+}
+
+/* --- COMPONENTE CARROSSEL NAVEGÁVEL --- */
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Preenche o espaço sem distorcer */
-    object-position: top center; /* Foca na parte de cima da foto */
 }
 
-/* Opcional: Um gradiente para suavizar a transição da foto para a cor de fundo */
-.bg-photo-overlay {
+.carousel-track {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    padding: 12px 4px;
+    width: 100%;
+}
+
+.carousel-track::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+}
+
+/* Setas de navegação */
+.carousel-arrow {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    /* Gradiente que vai de transparente para a cor do fundo da página */
-    background: linear-gradient(to bottom left, transparent 50%, var(--bg-page) 100%);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--bg-secondary);
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    transition: var(--transition);
+    font-size: 1rem;
 }
 
-/* --- REGRAS PARA EVITAR SOBREPOSIÇÃO (RESPONSIVO) --- */
+.carousel-arrow:hover:not(.disabled) {
+    background: var(--text-black);
+    color: #ffffff;
+    border-color: var(--text-black);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+}
 
-/* Em telas MENORES (celulares), a foto some para não atrapalhar */
-@media (max-width: 899px) {
-    .bg-photo-container {
-        display: none;
+.carousel-arrow:active:not(.disabled) {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-arrow.prev {
+    left: -18px;
+}
+
+.carousel-arrow.next {
+    right: -18px;
+}
+
+.carousel-arrow.disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+    pointer-events: none;
+    box-shadow: none;
+}
+
+/* Cards dentro do carrossel */
+.carousel-track .stack-card {
+    flex: 0 0 160px;
+    width: 160px;
+    scroll-snap-align: start;
+}
+
+.carousel-track .article-card {
+    flex: 0 0 320px;
+    width: 320px;
+    scroll-snap-align: start;
+    min-height: 190px;
+}
+
+/* Responsividade do Carrossel */
+@media (max-width: 768px) {
+    .carousel-arrow.prev {
+        left: -8px;
+    }
+    .carousel-arrow.next {
+        right: -8px;
+    }
+    .carousel-track .stack-card {
+        flex: 0 0 140px;
+        width: 140px;
+    }
+    .carousel-track .article-card {
+        flex: 0 0 85%;
+        width: 85%;
     }
 }
 
-/* Em telas MAIORES (Desktop/Tablet Grande) */
-@media (min-width: 900px) {
-    /* Ajusta o HERO para dar espaço à foto */
-    .hero {
-        text-align: left; /* Alinha texto à esquerda */
-        padding-right: 45%; /* Abre um grande espaço na direita onde a foto estará */
-        padding-top: 120px; /* Desce um pouco mais o texto */
-    }
-
-    /* Alinha os ícones sociais à esquerda também */
-    .social-links {
-        justify-content: flex-start;
-    }
-
-    /* Garante que o botão 'Sobre Mim' fique visível sobre a foto */
-    .nav-top {
-        position: relative;
-        z-index: 10;
-    }
-}

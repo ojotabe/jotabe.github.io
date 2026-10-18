@@ -11,113 +11,222 @@
 </head>
 <body>
 
-    <div class="bg-photo-container">
-        <img src="minha-foto-bg.png" alt="Foto de Jordan" class="bg-photo">
-        <div class="bg-photo-overlay"></div>
-    </div>
+
 
     <div class="container">
         <nav class="nav-top">
-            <button class="btn-about" onclick="toggleModal()">Sobre Mim</button>
+            <div class="nav-left">
+                <button class="btn-about" onclick="toggleModal()">Sobre Mim</button>
+            </div>
+            <div class="nav-center">
+                <a href="#projetos" class="nav-link">Projetos</a>
+                <a href="#artigos" class="nav-link">Artigos</a>
+            </div>
+            <div class="nav-right">
+                <span class="logo-neon">THEJOTA</span>
+            </div>
         </nav>
 
-        <header class="hero">
-            <h1>Olá, eu sou o Jordan </h1>
-            <p>Machine Learning Engineer • Data Scientist • Python Dev</p>
-            
-            <div class="social-links">
-                <a href="https://github.com/ojotabe" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/jordanbprado/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <!-- <a href="#" target="_blank"><i class="fab fa-medium"></i></a> -->
-                <a href="mailto:jordanprad@gmail.com"><i class="fas fa-envelope"></i></a>
+        <header class="hero" id="sobre">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Olá, eu sou o Jordan</h1>
+                    <p class="hero-role">Machine Learning Engineer • Data Scientist • Python Dev</p>
+                    
+                    <div class="hero-about">
+                        <p>
+                            Profissional em transição de carreira para Engenharia de Software e Machine Learning, aliando forte background analítico e de negócios com desenvolvimento técnico. Experiência prática na automatização de processos críticos utilizando Python e SQL, resultando em otimização de tempo e integridade de dados.
+                        </p>
+                        <p>
+                            Pós-graduando em Machine Learning Engineering, com foco em desenvolvimento de APIs (FastAPI/Flask) e modelagem estatística para soluções escaláveis.
+                        </p>
+                        <p class="hero-highlight">
+                            <i class="fas fa-check-circle"></i> Especialidades: Python, SQL, pipelines de dados, MLOps e modelagem preditiva.
+                        </p>
+                    </div>
+
+                    <div class="hero-footer-row">
+                        <a href="#projetos" class="btn-hero">Ver Projetos <i class="fas fa-arrow-down"></i></a>
+                        <div class="social-links">
+                            <a href="https://github.com/ojotabe" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/jordanbprado/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:jordanprad@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-media">
+                    <div class="hero-image-card">
+                        <img src="img/image_thejota.png" alt="Foto de Jordan Prado" class="hero-photo">
+                        <div class="hero-photo-gradient"></div>
+                    </div>
+                </div>
             </div>
         </header>
 
-        <div class="section-title">
+        <div class="section-title" id="projetos">
             Projetos
-            <a href="https://github.com/ojotabe?tab=repositories" target="_blank" class="link-ver-mais"> Mais projetos <i class="fas fa-arrow-right"></i></a>
         </div>
         
         <div class="bento-grid">
-            <a href="#" class="card span-2">
+            <a href="projetos.html" class="card span-2">
                 <div>
                     <div class="card-category">Machine Learning</div>
                     <div class="card-title">Customer Churn Prediction</div>
                     <div class="card-desc">Modelo XGBoost integrado com API Flask e Docker para previsão em tempo real.</div>
                 </div>
-                <div class="project-visual"><i class="fas fa-chart-pie"></i></div>
+                <div class="project-visual">
+                    <img src="img/projeto-churn.png" alt="Dashboard do Projeto Customer Churn">
+                </div>
             </a>
 
-            <a href="#" class="card row-2 card-dark">
+            <a href="projetos.html" class="card row-2 card-dark">
                 <div>
                     <div class="card-category">Deep Learning</div>
                     <div class="card-title">Visão Computacional</div>
-                    <div class="card-desc">Detecção de objetos em imagens médicas usando PyTorch e CNNs.</div>
+                    <div class="card-desc">Detecção e segmentação de imagens médicas usando PyTorch e CNNs.</div>
                 </div>
                 <div class="project-visual" style="height: 100%;">
-                    <img src="projeto-churn.png" alt="Dashboard do Projeto Churn">
-                    <!-- <i class="fas fa-eye"></i></div> -->
+                    <img src="img/projeto-visao-computacional.png" alt="Dashboard de Visão Computacional Médica">
                 </div>
             </a>
 
-            <a href="#" class="card">
+            <a href="projetos.html" class="card">
                 <div>
                     <div class="card-category">Engenharia de Dados</div>
                     <div class="card-title">ETL Pipeline AWS</div>
+                    <div class="card-desc">Ingestão e transformação com AWS S3, Glue e Athena.</div>
+                </div>
+                <div class="project-visual">
+                    <img src="img/projeto-etl-aws.png" alt="Pipeline de Dados AWS">
                 </div>
             </a>
 
-            <a href="#" class="card">
+            <a href="projetos.html" class="card">
                 <div>
                     <div class="card-category">Automação</div>
                     <div class="card-title">Bot de Web Scraping</div>
+                    <div class="card-desc">Crawler automatizado com Selenium e BeautifulSoup.</div>
+                </div>
+                <div class="project-visual">
+                    <img src="img/projeto-web-scraping.png" alt="Bot de Automação e Scraping">
                 </div>
             </a>
         </div>
 
+        <div class="projects-actions">
+            <a href="projetos.html" class="btn-ver-mais">
+                <span>Ver mais</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
         <div class="section-title">Tech Stack</div>
-            <div class="stack-grid">
+        <div class="carousel-container">
+            <button class="carousel-arrow prev" id="stack-prev" aria-label="Tecnologia anterior">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="carousel-track" id="stack-track">
+                <a href="pagina-projetos-ml.html" class="stack-card">
+                    <div class="stack-content"> 
+                        <i class="fab fa-python stack-icon"></i>
+                        <span class="stack-label">Python</span>
+                    </div>
+                    <span class="stack-hover-text">Ver projetos</span>
+                </a>
+
+                <a href="pagina-projetos-ml.html" class="stack-card">
+                    <div class="stack-content"> 
+                        <i class="fas fa-brain stack-icon"></i>
+                        <span class="stack-label">Machine Learning</span>
+                    </div>
+                    <span class="stack-hover-text">Ver projetos</span>
+                </a>
+
+                <a href="pagina-projetos-dl.html" class="stack-card">
+                    <div class="stack-content">
+                        <i class="fas fa-network-wired stack-icon"></i>
+                        <span class="stack-label">Deep Learning</span>
+                    </div>
+                    <span class="stack-hover-text">Ver projetos</span>
+                </a>
+
+                <a href="pagina-projetos-genai.html" class="stack-card">
+                    <div class="stack-content">
+                        <i class="fas fa-robot stack-icon"></i>
+                        <span class="stack-label">GenAI & LLMs</span>
+                    </div>
+                    <span class="stack-hover-text">Ver projetos</span>
+                </a>
+
                 <a href="pagina-projetos-api.html" class="stack-card">
                     <div class="stack-content">
                         <i class="fas fa-code stack-icon"></i>
-                        <span class="stack-label"> API </span>
+                        <span class="stack-label">FastAPI / APIs</span>
                     </div>
                     <span class="stack-hover-text">Ver projetos</span>
                 </a>
-                
-                 <a href="pagina-projetos-ml.html" class="stack-card">
-                     <div class="stack-content"> 
-                       <i class="fab fa-python stack-icon""></i>
-                        <span class="stack-label"> Machine Learning </span>
-                    </div>
-                    <span class="stack-hover-text">Ver projetos</span>
 
-                     
                 <a href="pagina-projetos-aws.html" class="stack-card">
                     <div class="stack-content">
                         <i class="fab fa-aws stack-icon"></i>
-                        <span class="stack-label"> AWS </span>
-                    </div>
-                    <span class="stack-hover-text">Ver projetos</span>
-                </a>
-                     
-                   <a href="pagina-projetos-genai.html" class="stack-card">
-                    <div class="stack-content">
-                       <i class="fas fa-award stack-icon"></i>
-                        <span class="stack-label"> GenAI </span>
+                        <span class="stack-label">AWS Cloud</span>
                     </div>
                     <span class="stack-hover-text">Ver projetos</span>
                 </a>
 
-              <a href="pagina-projetos-dl.html" class="stack-card">
+                <a href="projetos.html" class="stack-card">
                     <div class="stack-content">
-                        <i class="fas fa-code-branch stack-icon"></i>
-                        <span class="stack-label"> Deep Learning </span>
+                        <i class="fab fa-docker stack-icon"></i>
+                        <span class="stack-label">Docker</span>
                     </div>
                     <span class="stack-hover-text">Ver projetos</span>
                 </a>
-                     
+
+                <a href="projetos.html" class="stack-card">
+                    <div class="stack-content">
+                        <i class="fas fa-database stack-icon"></i>
+                        <span class="stack-label">SQL & Bancos</span>
+                    </div>
+                    <span class="stack-hover-text">Ver projetos</span>
+                </a>
+
+                <a href="projetos.html" class="stack-card">
+                    <div class="stack-content">
+                        <i class="fas fa-fire stack-icon"></i>
+                        <span class="stack-label">Databricks</span>
+                    </div>
+                    <span class="stack-hover-text">Ver projetos</span>
+                </a>
+
+                <a href="projetos.html" class="stack-card">
+                    <div class="stack-content">
+                        <i class="fas fa-cogs stack-icon"></i>
+                        <span class="stack-label">MLOps</span>
+                    </div>
+                    <span class="stack-hover-text">Ver projetos</span>
+                </a>
+
+                <a href="https://github.com/ojotabe" target="_blank" class="stack-card">
+                    <div class="stack-content">
+                        <i class="fab fa-git-alt stack-icon"></i>
+                        <span class="stack-label">Git & DevOps</span>
+                    </div>
+                    <span class="stack-hover-text">Ver projetos</span>
+                </a>
+
+                <a href="projetos.html" class="stack-card">
+                    <div class="stack-content">
+                        <i class="fas fa-microchip stack-icon"></i>
+                        <span class="stack-label">PyTorch</span>
+                    </div>
+                    <span class="stack-hover-text">Ver projetos</span>
+                </a>
             </div>
+            <button class="carousel-arrow next" id="stack-next" aria-label="Próxima tecnologia">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
 
         <div class="section-title">Certificações</div>
         <div class="bento-grid" style="grid-template-columns: 1fr 1fr;">
@@ -139,23 +248,69 @@
             </div>
         </div>
 
-        <div class="section-title">Artigos Recentes</div>
-        <div class="bento-grid">
-            <a href="#" class="card">
-                <div class="card-category">Artigo Medium</div>
-                <div class="card-title" style="font-size: 1.1rem;">Como otimizar hiperparâmetros com Optuna</div>
-                <div class="card-desc" style="margin-top: 10px;">Leitura de 5 min</div>
-            </a>
-            <a href="#" class="card">
-                <div class="card-category">Tutorial</div>
-                <div class="card-title" style="font-size: 1.1rem;">Deploy de modelos com FastAPI</div>
-                <div class="card-desc" style="margin-top: 10px;">Leitura de 8 min</div>
-            </a>
-            <a href="#" class="card">
-                <div class="card-category">Estudo de Caso</div>
-                <div class="card-title" style="font-size: 1.1rem;">Reduzindo dimensionalidade com PCA</div>
-                <div class="card-desc" style="margin-top: 10px;">Leitura de 6 min</div>
-            </a>
+        <div class="section-title" id="artigos">Artigos Recentes</div>
+        <div class="carousel-container">
+            <button class="carousel-arrow prev" id="articles-prev" aria-label="Artigo anterior">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="carousel-track" id="articles-track">
+                <a href="#" class="card article-card">
+                    <div>
+                        <div class="card-category">Artigo Medium</div>
+                        <div class="card-title" style="font-size: 1.1rem;">Como otimizar hiperparâmetros com Optuna</div>
+                        <div class="card-desc" style="margin-top: 10px;">Estratégias de busca bayesiana para modelos XGBoost e LightGBM.</div>
+                    </div>
+                    <div class="card-desc" style="font-weight: 600; color: var(--accent); margin-top: 15px;">Leitura de 5 min</div>
+                </a>
+
+                <a href="#" class="card article-card">
+                    <div>
+                        <div class="card-category">Tutorial</div>
+                        <div class="card-title" style="font-size: 1.1rem;">Deploy de modelos com FastAPI & Docker</div>
+                        <div class="card-desc" style="margin-top: 10px;">Empacotando endpoints preditivos de baixa latência em containers prontos para produção.</div>
+                    </div>
+                    <div class="card-desc" style="font-weight: 600; color: var(--accent); margin-top: 15px;">Leitura de 8 min</div>
+                </a>
+
+                <a href="#" class="card article-card">
+                    <div>
+                        <div class="card-category">Estudo de Caso</div>
+                        <div class="card-title" style="font-size: 1.1rem;">Reduzindo dimensionalidade com PCA</div>
+                        <div class="card-desc" style="margin-top: 10px;">Preservando variância explicada em datasets de alta dimensionalidade.</div>
+                    </div>
+                    <div class="card-desc" style="font-weight: 600; color: var(--accent); margin-top: 15px;">Leitura de 6 min</div>
+                </a>
+
+                <a href="#" class="card article-card">
+                    <div>
+                        <div class="card-category">MLOps</div>
+                        <div class="card-title" style="font-size: 1.1rem;">Rastreamento e Governança com MLflow</div>
+                        <div class="card-desc" style="margin-top: 10px;">Versionamento de experimentos, métricas e artefatos de modelos de Machine Learning.</div>
+                    </div>
+                    <div class="card-desc" style="font-weight: 600; color: var(--accent); margin-top: 15px;">Leitura de 7 min</div>
+                </a>
+
+                <a href="#" class="card article-card">
+                    <div>
+                        <div class="card-category">Engenharia de Dados</div>
+                        <div class="card-title" style="font-size: 1.1rem;">Pipelines ETL com PySpark e Delta Lake</div>
+                        <div class="card-desc" style="margin-top: 10px;">Boas práticas para transformações distribuídas na arquitetura Lakehouse.</div>
+                    </div>
+                    <div class="card-desc" style="font-weight: 600; color: var(--accent); margin-top: 15px;">Leitura de 9 min</div>
+                </a>
+
+                <a href="#" class="card article-card">
+                    <div>
+                        <div class="card-category">GenAI & LLMs</div>
+                        <div class="card-title" style="font-size: 1.1rem;">Arquiteturas RAG Avançadas com LangChain</div>
+                        <div class="card-desc" style="margin-top: 10px;">Técnicas de reranking e busca semântica para diminuir alucinações em aplicações com IA.</div>
+                    </div>
+                    <div class="card-desc" style="font-weight: 600; color: var(--accent); margin-top: 15px;">Leitura de 6 min</div>
+                </a>
+            </div>
+            <button class="carousel-arrow next" id="articles-next" aria-label="Próximo artigo">
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
 
         <div class="section-title">Minha Jornada</div>
@@ -224,6 +379,41 @@ estatística. Busco atuar desenvolvendo soluções escaláveis.
                 modal.style.display = 'none';
             }
         }
+
+        // Navegabilidade dos Carrosséis (Tech Stack e Artigos)
+        function initCarousel(trackId, prevBtnId, nextBtnId) {
+            const track = document.getElementById(trackId);
+            const prevBtn = document.getElementById(prevBtnId);
+            const nextBtn = document.getElementById(nextBtnId);
+
+            if (!track || !prevBtn || !nextBtn) return;
+
+            function updateArrows() {
+                const atStart = track.scrollLeft <= 5;
+                const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 5;
+                prevBtn.classList.toggle('disabled', atStart);
+                nextBtn.classList.toggle('disabled', atEnd);
+            }
+
+            prevBtn.addEventListener('click', () => {
+                const scrollAmount = Math.max(220, track.clientWidth * 0.75);
+                track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+
+            nextBtn.addEventListener('click', () => {
+                const scrollAmount = Math.max(220, track.clientWidth * 0.75);
+                track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+
+            track.addEventListener('scroll', updateArrows, { passive: true });
+            window.addEventListener('resize', updateArrows);
+            updateArrows();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initCarousel('stack-track', 'stack-prev', 'stack-next');
+            initCarousel('articles-track', 'articles-prev', 'articles-next');
+        });
     </script>
 
 </body>
